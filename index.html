@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metronome</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="layout-wrapper">
+        <div class="side-image left">
+            <img src="left_tiger.png" alt="Tiger playing electric guitar">
+        </div>
+        <div class="app-container">
+        <header>
+            <h1>Tiger Metronome</h1>
+            <p>Master your chops</p>
+        </header>
+
+        <main class="metronome-card glass-panel">
+            <div class="visualizer" id="visualizer">
+                <!-- Beat indicators will be injected here -->
+            </div>
+
+            <div class="bpm-display">
+                <span id="bpm-value">60</span>
+                <span class="bpm-label">BPM</span>
+            </div>
+
+            <div class="controls-row">
+                <div class="step-controls">
+                    <button class="step-btn" data-step="-10">-10</button>
+                    <button class="step-btn" data-step="-5">-5</button>
+                    <button class="step-btn" data-step="-3">-3</button>
+                    <button class="step-btn" data-step="-1">-1</button>
+                </div>
+                
+                <div class="slider-container">
+                    <input type="range" id="bpm-slider" min="20" max="280" value="60" step="1">
+                </div>
+
+                <div class="step-controls">
+                    <button class="step-btn" data-step="1">+1</button>
+                    <button class="step-btn" data-step="3">+3</button>
+                    <button class="step-btn" data-step="5">+5</button>
+                    <button class="step-btn" data-step="10">+10</button>
+                </div>
+            </div>
+
+            <div class="settings-row">
+                <div class="setting-group">
+                    <label for="beats-per-bar">Meter (Beats per Bar)</label>
+                    <select id="beats-per-bar">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4" selected>4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+                <div class="setting-group">
+                    <label for="timer-toggle">Timer (2 Min)</label>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="timer-toggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="timer-display-container" id="timer-display-container" style="display: none;">
+                <span id="timer-display">02:00</span>
+            </div>
+
+            <button id="play-btn" class="play-btn">
+                <span class="icon">▶</span>
+                <span class="text">START</span>
+            </button>
+        </main>
+        </div>
+        <div class="side-image right">
+            <img src="right_tiger.png" alt="Female tiger playing drums">
+        </div>
+    </div>
+
+    <script src="metronome.js"></script>
+
+    <a href="https://buymeacoffee.com/tomas.nord" target="_blank" class="buy-me-coffee-btn" aria-label="Buy me a coffee">
+        ☕ Support
+    </a>
+</body>
+</html>
